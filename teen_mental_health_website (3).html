@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teen Mental Health Support</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f8fb;
+      color: #243447;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #7fb3d5, #a9d6c9);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #2c6f8f;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    nav {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #2c6f8f;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 1050px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 30px;
+      color: #2c6f8f;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #287271;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      background: #e8f5f2;
+      border-left: 6px solid #78b7a4;
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 25px;
+    }
+
+    .steps {
+      counter-reset: step;
+    }
+
+    .step {
+      background: white;
+      margin-bottom: 18px;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+      position: relative;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      background: #7fb3d5;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      font-weight: bold;
+    }
+
+    .quiz-box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .question {
+      margin-bottom: 22px;
+    }
+
+    .question p {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+    }
+
+    button {
+      background: #2c6f8f;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #1f536c;
+    }
+
+    #result {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 12px;
+      background: #f0f8ff;
+      display: none;
+    }
+
+    footer {
+      background: #243447;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      max-width: 800px;
+      margin: 8px auto;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Teen Mental Health Support</h1>
+    <p>A simple website created to help teenagers understand stress, anxiety, and healthy coping strategies.</p>
+    <a class="button" href="#quiz">Take the Self-Check Quiz</a>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#stress">Stress</a>
+    <a href="#anxiety">Anxiety</a>
+    <a href="#selfcare">Self-Care</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#resources">Resources</a>
+  </nav>
+
+  <section id="about">
+    <h2 class="section-title">About This Project</h2>
+    <div class="card">
+      <p>This website was created as a CLC 12 Grad Project. The goal is to make mental health information easier for teenagers to understand. Instead of using complicated medical language, this site explains common issues in a simple and practical way.</p>
+      <div class="highlight">
+        <p><strong>Main Goal:</strong> To help students recognize stress and anxiety, learn basic coping strategies, and know where to find support when they need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stress">
+    <h2 class="section-title">Understanding Stress</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>What is stress?</h3>
+        <p>Stress is the pressure people feel when they have too much to handle. For students, it can come from school, exams, family expectations, friendships, or future planning.</p>
+      </div>
+      <div class="card">
+        <h3>Common signs</h3>
+        <p>Stress can cause headaches, tiredness, trouble sleeping, low motivation, or feeling irritated more easily than usual.</p>
+      </div>
+      <div class="card">
+        <h3>What can help?</h3>
+        <p>Small habits like planning tasks, taking breaks, sleeping enough, and talking to someone can make stress feel more manageable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="anxiety">
+    <h2 class="section-title">Understanding Anxiety</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>What is anxiety?</h3>
+        <p>Anxiety is a feeling of worry or fear. It becomes a problem when it happens often or makes daily life harder.</p>
+      </div>
+      <div class="card">
+        <h3>How it can feel</h3>
+        <p>Some people feel nervous, overthink situations, avoid certain tasks, or feel physical symptoms like a fast heartbeat.</p>
+      </div>
+      <div class="card">
+        <h3>Support matters</h3>
+        <p>Anxiety is not a weakness. Asking for help from a trusted adult, counsellor, doctor, or friend can be an important first step.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="selfcare">
+    <h2 class="section-title">Healthy Coping Strategies</h2>
+    <div class="steps">
+      <div class="step"><strong>Sleep:</strong> Try to keep a regular sleep schedule and avoid staying up too late too often.</div>
+      <div class="step"><strong>Break tasks down:</strong> Large assignments feel less stressful when they are divided into smaller steps.</div>
+      <div class="step"><strong>Move your body:</strong> Walking, stretching, or playing sports can help release stress.</div>
+      <div class="step"><strong>Talk to someone:</strong> Sharing what you are dealing with can make problems feel less heavy.</div>
+      <div class="step"><strong>Limit overload:</strong> Too much social media, school pressure, or comparison can make mental health worse.</div>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <h2 class="section-title">Student Self-Check Quiz</h2>
+    <div class="quiz-box">
+      <p>This quiz is not a diagnosis. It is only a simple self-reflection tool.</p>
+      <br />
+
+      <div class="question">
+        <p>1. How often do you feel overwhelmed by school or personal responsibilities?</p>
+        <label><input type="radio" name="q1" value="1"> Rarely</label>
+        <label><input type="radio" name="q1" value="2"> Sometimes</label>
+        <label><input type="radio" name="q1" value="3"> Often</label>
+      </div>
+
+      <div class="question">
+        <p>2. How often do you have trouble sleeping because of stress or worry?</p>
+        <label><input type="radio" name="q2" value="1"> Rarely</label>
+        <label><input type="radio" name="q2" value="2"> Sometimes</label>
+        <label><input type="radio" name="q2" value="3"> Often</label>
+      </div>
+
+      <div class="question">
+        <p>3. When you feel stressed, do you usually know what to do?</p>
+        <label><input type="radio" name="q3" value="1"> Yes, usually</label>
+        <label><input type="radio" name="q3" value="2"> Sometimes</label>
+        <label><input type="radio" name="q3" value="3"> Not really</label>
+      </div>
+
+      <button onclick="checkQuiz()">See Result</button>
+      <div id="result"></div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <h2 class="section-title">Helpful Resources</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>School Support</h3>
+        <p>Students can talk to a school counsellor, teacher, or trusted adult if they need support.</p>
+      </div>
+      <div class="card">
+        <h3>Canadian Mental Health Association</h3>
+        <p>CMHA provides mental health information and support resources in Canada.</p>
+      </div>
+      <div class="card">
+        <h3>Emergency Help</h3>
+        <p>If someone is in danger or may hurt themselves, they should call emergency services or speak to an adult immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>CLC 12 Grad Project</strong> | Created by Boyang Xia</p>
+    <p>This website is for educational purposes only and does not replace professional medical advice.</p>
+  </footer>
+
+  <script>
+    function checkQuiz() {
+      const questions = ['q1', 'q2', 'q3'];
+      let score = 0;
+      let answered = true;
+
+      questions.forEach(function(q) {
+        const selected = document.querySelector('input[name="' + q + '"]:checked');
+        if (!selected) {
+          answered = false;
+        } else {
+          score += Number(selected.value);
+        }
+      });
+
+      const resultBox = document.getElementById('result');
+      resultBox.style.display = 'block';
+
+      if (!answered) {
+        resultBox.innerHTML = '<strong>Please answer all questions first.</strong>';
+        return;
+      }
+
+      if (score <= 4) {
+        resultBox.innerHTML = '<strong>Result: Low stress level.</strong><br>You seem to be managing stress fairly well. Keep using healthy habits and check in with yourself regularly.';
+      } else if (score <= 7) {
+        resultBox.innerHTML = '<strong>Result: Medium stress level.</strong><br>You may be dealing with some stress. It may help to take breaks, organize your tasks, and talk to someone you trust.';
+      } else {
+        resultBox.innerHTML = '<strong>Result: High stress level.</strong><br>You may be feeling overwhelmed. Consider speaking with a trusted adult, school counsellor, or mental health professional for support.';
+      }
+    }
+  </script>
+
+</body>
+</html>
